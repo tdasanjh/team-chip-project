@@ -7,8 +7,8 @@ class Laser:
 	"""
 	def __init__(self, COM_port, channel):
 		self.channel = channel
-		rm = pyvisa.ResourceManager('@py')
-		self.laser = rm.open_resource(f"ASRL{COM_port}::INSTR")
+		rm = pyvisa.ResourceManager()
+		self.laser = rm.open_resource(COM_port)
 		self.laser.timeout = 20000
 		self.laser.read_termination = '\r>'
 		self.laser.write_termination = '\r'
