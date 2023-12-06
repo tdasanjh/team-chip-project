@@ -20,7 +20,7 @@ wavelength_step = 0.1
 powermeter_serial = 'P0001012'
 laser_com_port = 'GPIB0::10::INSTR'
 laser_channel = 1
-save_path = Path("C:\\Users\\IT086179\Desktop\\Team_Chip_1_2023\\wavelength_sweeps")
+save_path = Path("C:\\Users\\IT086179\Desktop\\Team_Chip_1_2023\\ltphotonics_Freddie_6Dec\\team-chip-project\\wavelength_sweeps")
 
 # Connect to instruments
 laser = Laser(COM_port=laser_com_port, channel=laser_channel)
