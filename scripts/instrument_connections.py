@@ -1,9 +1,9 @@
 import pyvisa
 
-rm = pyvisa.ResourceManager('@py')
-print(rm.list_resources())
+rm1 = pyvisa.ResourceManager()
+print(rm1.list_resources())
 
-laser = rm.open_resource("ASRL7::INSTR")
+laser = rm1.open_resource('GPIB0::10::INSTR')
 laser.write_termination = '\r'
 laser.read_termination = '\r'
 laser.baud_rate = 9600
@@ -13,7 +13,8 @@ response = laser.query('*IDN?', delay=1)
 print(response)
 laser.close()
 
-powermeter = rm.open_resource('USB0::4883::32888::P0001012::0::INSTR')
+rm2= pyvisa.ResourceManager('@py')
+powermeter = rm2.open_resource('USB0::4883::32888::P0001012::0::INSTR')
 powermeter.write_termination = '\r'
 powermeter.read_termination = '\r'
 print(powermeter.query('*IDN?'))
