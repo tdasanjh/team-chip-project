@@ -14,7 +14,7 @@ from sweeper import Sweeper
 device_name = "racetrack-01"
 start_wavelength = 1490
 end_wavelength = 1610
-wavelength_step = 0.1
+wavelength_step = 0.01
 
 # Instrument parameters
 powermeter_serial = 'P0001012'
