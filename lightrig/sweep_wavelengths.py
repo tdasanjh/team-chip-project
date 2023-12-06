@@ -12,8 +12,8 @@ from sweeper import Sweeper
 
 # Wavelength sweep parameters
 device_name = "racetrack-01"
-start_wavelength = 1550
-end_wavelength = 1555
+start_wavelength = 1490
+end_wavelength = 1610
 wavelength_step = 0.1
 
 # Instrument parameters
