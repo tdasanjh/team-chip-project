@@ -12,7 +12,7 @@ from sweeper import Sweeper
 
 # Wavelength sweep parameters
 
-device_name = "sg_rr_100_028"
+device_name = "sg_rr_100_027"
 start_wavelength = 1520
 end_wavelength = 1580
 wavelength_step = 0.01
