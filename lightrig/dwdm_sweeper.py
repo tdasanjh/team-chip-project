@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 from laser import Laser
-from powermeter import Powermeter
+from powermeter_watts import Powermeter
 
 
 def timestamp():
