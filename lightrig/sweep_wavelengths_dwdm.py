@@ -12,7 +12,7 @@ from dwdm_sweeper import Sweeper
 
 # Wavelength sweep parameters
 
-device_name = "dwdm_ch_26_1550_1560"
+device_name = "dwdm_ch_28_1550_1560"
 start_wavelength = 1550
 end_wavelength = 1560
 wavelength_step = 0.01
