@@ -12,10 +12,10 @@ from dwdm_sweeper import Sweeper
 
 # Wavelength sweep parameters
 
-device_name = "dwdm_channel_26"
-start_wavelength = 1520
-end_wavelength = 1580
-wavelength_step = 0.1
+device_name = "dwdm_ch_26_1550_1560"
+start_wavelength = 1550
+end_wavelength = 1560
+wavelength_step = 0.01
 
 # Instrument parameters
 powermeter_serial = 'P0001012'
