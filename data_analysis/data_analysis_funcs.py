@@ -31,7 +31,7 @@ def plot_visualise(wavelengths, powers, full_range=True, start_index=0, stop_ind
         plt.plot(wavelengths,powers)
         plt.show()
     if full_range==False:
-        plt.plot(wavelengths[start_index:stop_index],powers[start_index,stop_index])
+        plt.plot(wavelengths[start_index:stop_index],powers[start_index:stop_index])
     return
     
 def give_peak_locs(wavel_step_size,fsr_approx,promin,wavelengths, powers):
