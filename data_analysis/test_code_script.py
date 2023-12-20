@@ -10,7 +10,7 @@ print(daf.vector_dBm_to_mW(A))
 xs,ys=daf.get_wavlen_and_pow_arrays("C:\\Users\\TamCoding\\Documents\\Team_project\\shared_git_repo\\team-chip-project\\data_analysis\\dummy_data.csv")
 print(xs)
 print(ys)
-#works but misses off first row in CSV file
+#works but misses off first row in CSV file, so added header=None to original func.
 print(len(xs))
 print(len(ys))
 
