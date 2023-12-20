@@ -14,3 +14,6 @@ print(ys)
 print(len(xs))
 print(len(ys))
 
+daf.plot_visualise(xs,ys)
+
+daf.plot_visualise(xs,ys,full_range=False,start_index=5,stop_index=10)
