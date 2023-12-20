@@ -1,6 +1,7 @@
 import data_analysis_funcs as daf
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 """
 # testing dBm to mW func by using calculator (just doing /10 bit in head)
 A=[-15.5,-12.23,-21.6,-9.8]
@@ -34,5 +35,13 @@ plt.scatter(peak_xs,peak_ys)
 plt.show()
 #seems to work when tested in this way although I know signal is not noisy
 """
+# test calc fsrs on a dummy list and also the fsr mean and errors calc used excel sheet to test them, worked
+fsr_list=[1.1,1.2,1.35,1.46,1.79]
+fsr_vals=daf.calc_fsrs(fsr_list)
+print(daf.calc_fsrs(fsr_list))
+print(daf.fsr_avg_and_error(fsr_vals))
+
+#not going to bother testing subtracted spectrum plot code, as don't think it will be used.
+
 
 
