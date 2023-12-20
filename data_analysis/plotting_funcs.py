@@ -6,7 +6,7 @@ def make_plot(data_filename):
     #takes csv and plots graph of Power/dBm versus wavelength
     #takes in csv filename
     #does the plot
-    data_to_plot=pd.read_csv(data_filename)
+    data_to_plot=pd.read_csv(data_filename,header=None)
     fig1,axs1=plt.subplots()
     data_plot_array=data_to_plot.to_numpy(copy=True)
     xs=data_plot_array[:,0]
@@ -21,7 +21,7 @@ def make_plot_scatter(data_filename):
     #takes csv and plots graph of Power/dBm versus wavelength
     #takes in csv filename
     #does the plot
-    data_to_plot=pd.read_csv(data_filename)
+    data_to_plot=pd.read_csv(data_filename,header=None)
     fig1,axs1=plt.subplots()
     data_plot_array=data_to_plot.to_numpy(copy=True)
     xs=data_plot_array[:,0]
