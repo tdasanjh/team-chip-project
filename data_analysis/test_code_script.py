@@ -35,11 +35,13 @@ plt.scatter(peak_xs,peak_ys)
 plt.show()
 #seems to work when tested in this way although I know signal is not noisy
 """
+"""
 # test calc fsrs on a dummy list and also the fsr mean and errors calc used excel sheet to test them, worked
 fsr_list=[1.1,1.2,1.35,1.46,1.79]
 fsr_vals=daf.calc_fsrs(fsr_list)
 print(daf.calc_fsrs(fsr_list))
 print(daf.fsr_avg_and_error(fsr_vals))
+"""
 
 #not going to bother testing subtracted spectrum plot code, as don't think it will be used.
 
