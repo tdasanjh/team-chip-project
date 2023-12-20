@@ -14,12 +14,3 @@ print(ys)
 print(len(xs))
 print(len(ys))
 
-# trying instead 
-data=pd.read_csv("C:\\Users\\TamCoding\\Documents\\Team_project\\shared_git_repo\\team-chip-project\\data_analysis\\dummy_data.csv",header=None)
-data_array=data.to_numpy(copy=True)
-xs=data_array[:,0]
-ys=data_array[:,1]
-print(xs)
-print(ys)
-print(len(xs))
-print(len(ys))
