@@ -34,14 +34,14 @@ def plot_visualise(wavelengths, powers, full_range=True, start_index=0, stop_ind
         plt.plot(wavelengths[start_index:stop_index],powers[start_index:stop_index])
     return
     
-def give_peak_locs(wavel_step_size,fsr_approx,promin,wavelengths, powers):
+def give_peak_locs(wavel_step_size,fsr_approx,promin,dist,wavelengths, powers):
     #to give locations of peaks in scan data based on estimates of prominence and
     #takes in wavelength step size, an approximation of the fsr and a prominence for peaks
     #(to see what is meant by prominence see scipy.signal.peak_prominences documentation)
     #returns in a tuple peak locs, number of peaks, and their corresponding power and wavelength values
     neg_powers=-powers
     search_len=fsr_approx/wavel_step_size
-    peaks_info=scipy.signal.find_peaks(neg_powers,prominence=promin, wlen=search_len)
+    peaks_info=scipy.signal.find_peaks(neg_powers,distance=dist,prominence=promin, wlen=search_len)
     peaks_array=peaks_info[0]
     num_peaks=len(peaks_array)
     peak_wavelengths=[wavelengths[x] for x in peaks_array]
