@@ -20,13 +20,19 @@ daf.plot_visualise(xs,ys)
 daf.plot_visualise(xs,ys,full_range=False,start_index=5,stop_index=10)
 #seems to work
 """
+"""
 xs,ys=daf.get_wavlen_and_pow_arrays("C:\\Users\\TamCoding\\Documents\\Team_project\\shared_git_repo\\team-chip-project\\data_analysis\\dummy_data_2.csv")
 peak_locs, n_peaks, peak_xs, peak_ys=daf.give_peak_locs(0.2,6,0.6,15,xs,ys)
 print(peak_locs)
 print(n_peaks)
 print(peak_xs)
 print(peak_ys)
+print(xs)
+print(ys)
 plt.plot(xs,ys)
 plt.scatter(peak_xs,peak_ys)
 plt.show()
+#seems to work when tested in this way although I know signal is not noisy
+"""
+
 
