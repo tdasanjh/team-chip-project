@@ -69,7 +69,7 @@ plt.show()
 #going to use arrays that I just generate as assume that will be fine
 wvlen_peak_search=np.linspace(2*np.pi,4*np.pi,101)
 wvlen_step_size=2*np.pi/100
-approx_fsr=2*(np.pi/8)
+approx_fsr=2*(np.pi/8)*8
 promin_use=0.4
 #dist_use=(approx_fsr/2)/wvlen_step_size
 dist_use=1
