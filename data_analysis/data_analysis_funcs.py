@@ -78,9 +78,10 @@ def gc_subtracted_spectrum(gc_filepath,structure_filepath):
 
 def get_peak_FWHM(wavel_step_size,fsr_approx,promin,dist,wavelengths, powers):
     """
-    #function that gives peak FWHM, and data for visualsing FWHM
-    #takes in wavelength step size, approx fsr prominence, distance, wavelengths, powers
-    #returns resonance peak location, number of peaks, peak wavelengths, peak powers and peak widths(in nm) 
+    function that gives peak FWHM, and data for visualsing FWHM
+    takes in wavelength step size, approx fsr prominence, distance, wavelengths, powers
+    returns peak widths, the height at which the peak width was found, and the interpolated 
+    left and right wavlength positions of where the peak with was found on the signal.
     """   
     neg_powers=-powers
     search_len=fsr_approx/wavel_step_size
