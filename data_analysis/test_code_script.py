@@ -67,8 +67,9 @@ plt.show()
 """
 #testing new FWHM code on some dummy data to see if it does what I expect:
 #going to use arrays that I just generate as assume that will be fine
-wvlen_peak_search=np.linspace(2*np.pi,4*np.pi,101)
-wvlen_step_size=2*np.pi/100
+num_points=1001
+wvlen_peak_search=np.linspace(2*np.pi,4*np.pi,num_points)
+wvlen_step_size=2*np.pi/(num_points-1)
 approx_fsr=2*(np.pi/8)
 promin_use=0.4
 #dist_use=(approx_fsr/2)/wvlen_step_size
