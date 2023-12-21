@@ -95,6 +95,6 @@ def get_peak_FWHM(wavel_step_size,fsr_approx,promin,dist,wavelengths, powers):
 
 def plot_lines_FWHM(peak_width_heights,peak_width_left,peak_width_right,wavelengths,powers):
     plt.plot(wavelengths,powers)
-    plt.hlines(peak_width_heights,peak_width_left,peak_width_right)
+    plt.hlines(peak_width_heights,peak_width_left,peak_width_right,color="red")
     plt.show()
     return
