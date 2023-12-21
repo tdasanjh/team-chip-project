@@ -2,6 +2,8 @@ import data_analysis_funcs as daf
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import scipy.signal
+
 """
 # testing dBm to mW func by using calculator (just doing /10 bit in head)
 A=[-15.5,-12.23,-21.6,-9.8]
@@ -44,6 +46,4 @@ print(daf.fsr_avg_and_error(fsr_vals))
 """
 
 #not going to bother testing subtracted spectrum plot code, as don't think it will be used.
-
-
 
