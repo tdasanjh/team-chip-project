@@ -97,5 +97,4 @@ def get_peak_FWHM(wavel_step_size,fsr_approx,promin,dist,wavelengths, powers):
     visual_widths=peak_widths_info[1:] #width heights and left and right intersection points of a horizontal line at peak evaluation height
     return (peaks_array, num_peaks,peak_wavelengths,peak_powers,peak_widths_array,visual_widths)
 
-def plot_lines_FWHM(min_wavlength, wavel_step_size, peak_w_info, powers, wavelens):
-    
+#def plot_lines_FWHM(min_wavlength, wavel_step_size, peak_w_info, powers, wavelens):
