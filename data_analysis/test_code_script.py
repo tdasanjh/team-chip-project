@@ -46,4 +46,27 @@ print(daf.fsr_avg_and_error(fsr_vals))
 """
 
 #not going to bother testing subtracted spectrum plot code, as don't think it will be used.
+#working out how to use peak_widths
+xs=np.linspace(0,2*np.pi,100)
+ys=np.sin(8*xs)
+plt.plot(xs,ys)
+plt.show()
+peaks_data=scipy.signal.find_peaks(ys,prominence=0.5, wlen=25)
+peak_locs=peaks_data[0]
+peak_properties=peaks_data[1]
+peak_proms=peak_properties["prominences"]
+peak_right_bases=peak_properties["right_bases"]
+peak_left_bases=peak_properties["left_bases"]
+print(len(peak_proms))
+print(peak_proms)
+print(peak_right_bases)
+print(peak_left_bases)
+
+peak_widths_info=scipy.signal.peak_widths(ys,peak_locs,rel_height=0.5,prominence_data=(peak_proms,peak_right_bases,peak_left_bases))
+peak_widths_heights=peak_widths_info[1]
+peak_widths_xpos=peak_widths_info[2]
+print(peak_widths_info)
+print(peak_widths_heights)
+print(peak_widths_xpos)
+
 

@@ -75,3 +75,27 @@ def gc_subtracted_spectrum(gc_filepath,structure_filepath):
     struc_wavelengths, struc_powers=get_wavlen_and_pow_arrays(structure_filepath)
     subtr_powers=struc_powers-gc_powers
     return (struc_wavelengths,subtr_powers)
+
+def get_peak_FWHM(wavel_step_size,fsr_approx,promin,dist,wavelengths, powers):
+    """
+    #function that gives peak FWHM, and other peak data
+    #takes in wavelength step size, approx fsr prominence, distance, wavelengths, powers
+    #returns resonance peak location, number of peaks, peak wavelengths, peak powers and peak widths(in nm) 
+    """   
+    neg_powers=-powers
+    search_len=fsr_approx/wavel_step_size
+    peaks_info=scipy.signal.find_peaks(neg_powers,distance=dist,prominence=promin, wlen=search_len)
+    peaks_array=peaks_info[0]
+    peaks_properties=peaks_info[1]
+    peak_prominences=peaks_properties["prominences"]
+    num_peaks=len(peaks_array)
+    peak_wavelengths=[wavelengths[x] for x in peaks_array]
+    peak_powers=[powers[x] for x in peaks_array]
+    peak_widths_info=scipy.signal.peak_widths(neg_powers,peaks_array,rel_height=0.5,prominence_data=peak_prominences)
+    peak_widths_array=peak_widths_info[0]
+    peak_widths_array=peak_widths_array*wavel_step_size
+    visual_widths=peak_widths_info[1:] #width heights and left and right intersection points of a horizontal line at peak evaluation height
+    return (peaks_array, num_peaks,peak_wavelengths,peak_powers,peak_widths_array,visual_widths)
+
+def plot_lines_FWHM(min_wavlength, wavel_step_size, peak_w_info, powers, wavelens):
+    
