@@ -44,7 +44,7 @@ fsr_vals=daf.calc_fsrs(fsr_list)
 print(daf.calc_fsrs(fsr_list))
 print(daf.fsr_avg_and_error(fsr_vals))
 """
-
+"""
 #not going to bother testing subtracted spectrum plot code, as don't think it will be used.
 #working out how to use peak_widths
 xs=np.linspace(0,2*np.pi,101)
@@ -64,4 +64,24 @@ print(peak_widths_right_pos)
 plt.plot(xs,ys)
 plt.hlines(peak_widths_heights,peak_widths_left_pos*(2*np.pi/100),peak_widths_right_pos*(2*np.pi/100))
 plt.show()
-
+"""
+#testing new FWHM code on some dummy data to see if it does what I expect:
+#going to use arrays that I just generate as assume that will be fine
+wvlen_peak_search=np.linspace(2*np.pi,4*np.pi,101)
+wvlen_step_size=2*np.pi/100
+approx_fsr=2*(np.pi/8)
+promin_use=0.4
+dist_use=(approx_fsr/2)/wvlen_step_size
+power_peak_search=-np.sin(8*wvlen_peak_search)
+plt.plot(wvlen_peak_search,power_peak_search)
+plt.show()
+peak_width_data=daf.get_peak_FWHM(wvlen_step_size,approx_fsr,promin_use,dist_use,wvlen_peak_search,power_peak_search)
+peak_widths=peak_width_data[0]
+print(peak_widths)
+peak_width_heights=peak_width_data[1]
+peak_width_lefts=peak_width_data[2]
+peak_width_rights=peak_width_data[3]
+daf.plot_lines_FWHM(peak_width_heights,peak_width_lefts,peak_width_rights,wvlen_peak_search,power_peak_search)
+mean_FWHM,FWHM_error=daf.fsr_avg_and_error(peak_widths)
+print(mean_FWHM)
+print(FWHM_error)
