@@ -65,6 +65,8 @@ plt.plot(xs,ys)
 plt.hlines(peak_widths_heights,peak_widths_left_pos*(2*np.pi/100),peak_widths_right_pos*(2*np.pi/100))
 plt.show()
 """
+###############################################################################
+#FWHM code test
 #testing new FWHM code on some dummy data to see if it does what I expect:
 #going to use arrays that I just generate as assume that will be fine
 num_points=10001
@@ -90,3 +92,4 @@ daf.plot_lines_FWHM(peak_width_heights,peak_width_lefts,peak_width_rights,wvlen_
 mean_FWHM,FWHM_error=daf.fsr_avg_and_error(peak_widths)
 print(mean_FWHM)
 print(FWHM_error)
+############################################################################################
