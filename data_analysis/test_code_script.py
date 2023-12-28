@@ -96,6 +96,9 @@ print(FWHM_error)
 ############################################################################################
 """
 
-a=np.array([2,4,6,8,10])
-b=np.array([0.5,0.4,0.3,0.2,0.1])
-print(a/b)
+test_Q=1700
+test_Q_error=1
+test_R=100
+test_R_error=0.9
+print(daf.calc_Q3overR2(test_Q,test_Q_error,test_R,test_R_error))
+#checked against calculator and passed
