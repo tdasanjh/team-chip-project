@@ -99,3 +99,13 @@ def plot_lines_FWHM(peak_width_heights,peak_width_left,peak_width_right,waveleng
     plt.hlines(peak_width_heights,peak_width_left,peak_width_right,color="red")
     plt.show()
     return
+
+def calc_Q3overR2(Q,Q_error,R,R_error):
+    """
+    This function finds Q^3/R^2 and it's associated error.
+    Takes in Q and its error, and R and its error.
+    Returns Q^3/R^2 followed by its associated error.
+    """
+    ans=Q**3/R**2
+    ans_uncertainty=ans*np.sqrt((3*(Q_error/Q))**2+(2*(R_error/R))**2)
+    return (ans,ans_uncertainty)
