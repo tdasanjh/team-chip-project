@@ -65,6 +65,7 @@ plt.plot(xs,ys)
 plt.hlines(peak_widths_heights,peak_widths_left_pos*(2*np.pi/100),peak_widths_right_pos*(2*np.pi/100))
 plt.show()
 """
+"""
 ###############################################################################
 #FWHM code test
 #testing new FWHM code on some dummy data to see if it does what I expect:
@@ -93,3 +94,8 @@ mean_FWHM,FWHM_error=daf.fsr_avg_and_error(peak_widths)
 print(mean_FWHM)
 print(FWHM_error)
 ############################################################################################
+"""
+
+a=np.array([2,4,6,8,10])
+b=np.array([0.5,0.4,0.3,0.2,0.1])
+print(a/b)
