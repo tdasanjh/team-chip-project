@@ -95,10 +95,17 @@ print(mean_FWHM)
 print(FWHM_error)
 ############################################################################################
 """
-
+"""
 test_Q=1700
 test_Q_error=1
 test_R=100
 test_R_error=0.9
 print(daf.calc_Q3overR2(test_Q,test_Q_error,test_R,test_R_error))
 #checked against calculator and passed
+"""
+
+test_signal=np.array([0,2,4,2,0])
+peak_locs=scipy.signal.find_peaks(test_signal)[0]
+print(peak_locs)
+peak_widths=scipy.signal.peak_widths(test_signal,peak_locs)[0]
+print(peak_widths)
